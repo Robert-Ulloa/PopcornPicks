@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script defer src="scripts.js"></script> <!-- Link to your JavaScript file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Watchlist</h1>
+        
+        <div class="section search-movie">
+            <h2>Search for a Movie</h2>
+            <form id="search-movie-form">
+                <input type="text" id="movie-name" placeholder="Enter movie name" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        
+        <div class="section movie-details">
+            <h2>Movie Details</h2>
+            <div id="movie-details-container">
+                <!-- Movie details will be dynamically added here -->
+            </div>
+        </div>
+        
+        <div class="section watchlist">
+            <h2>Your Watchlist</h2>
+            <button id="sort-watchlist">Sort Watchlist</button>
+            <ul id="movie-list">
+                <!-- Movie items will be dynamically added here -->
+            </ul>
+        </div>
+        
+        <div class="section top-picks">
+            <h2>Top Picks List</h2>
+            <ul id="top-picks-list">
+                <!-- Top pick movie items will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
