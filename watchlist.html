@@ -8,21 +8,41 @@
     <script defer src="watchlist.js"></script> <!-- Link to your JavaScript file -->
 </head>
 <body>
-    <header>
-        <h1>PopcornPicks Watchlist</h1>
-        <nav>
-            <button onclick="goBack()">Back to Home</button>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="watchlist">
-            <div id="genre-sections">
-                <!-- Genre sections will be dynamically added here by JavaScript -->
-                <h2>Favorites</h2>
+    <!-- Banner Section -->
+    <header class="hero is-dark">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">PopcornPicks Watchlist</h1>
+                <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+                    <div class="navbar-menu">
+                        <div class="navbar-start">
+                            <a class="navbar-item" href="index.html">Back to Home</a>
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </section>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <section class="watchlist">
+                <div id="genre-sections">
+                    <!-- Genre sections will be dynamically added here by JavaScript -->
+                    <h2 class="subtitle">Favorites</h2>
+                </div>
+            </section>
+        </div>
     </main>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>PopcornPicks</strong> by <a href="#">JRT</a>.
+            </p>
+        </div>
+    </footer>
 
     <script>
         function goBack() {
