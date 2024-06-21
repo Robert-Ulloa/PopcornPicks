@@ -1,35 +1,56 @@
- const apiKeyTmdb = "441e8e76a168da10c7a3bb9b4464a698"
-
-
- function getApiDataTmdb () {
- const tmdbUrl = `https://api.themoviedb.org/3/movie/157336/images?api_key=${apiKeyTmdb}`;
-// This is a skeleton until we have api and other aspects of project completed
-
+const apiKeyTmdb = "441e8e76a168da10c7a3bb9b4464a698"
 const apiKey = "YOUR_API_KEY";
 const searchUrl = "https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&query=";
 
-function searchMovies(event) {
-    if (event.key === 'Enter') {
-        const query = document.getElementById('movieSearch').value;
-        fetchMovies(query);
+function getApiDataTmdb() {
+    const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKeyTmdb}&query=`;
+
+    // This is a skeleton until we have api and other aspects of project completed
+
+
+
+    function searchMovies(event) {
+        if (event.key === 'Enter') {
+            const query = document.getElementById('movieSearch').value;
+            fetchMovies(query);
+        }
     }
-}
 
-console.log(movieApi);
- };
+    console.log(movieApi);
+};
 
 
- const apiKeyOmdb = "311fbec3"
- 
- function geApiDataOmdb () {
-    const omdbUrl = `http://www.omdbapi.com/?apikey=${311fbec3}&t=${title}&y=${year}`;
- };
+
+
+
+
+// Dont know what this is and how it applys to what we have right now so i will leave this up to you Joshua
 function fetchMovies(query) {
     fetch(searchUrl + encodeURIComponent(query))
         .then(response => response.json())
         .then(data => displayResults(data.results))
         .catch(error => console.error('Error fetching data:', error));
 }
+//  function that shows data for omdb in console and  will use with tmdb data 
+function getMovieRatings(title, year) {
+    const apiKey = '311fbec3';  // Your OMDb API key
+    const omdbUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${title}&y=${year}`;
+
+    fetch(omdbUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.Response === "True") {
+                const ratings = data.Ratings;
+                console.log(ratings);  // Handle the ratings data
+            } else {
+                console.error('Error:', data.Error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+getMovieRatings();
 
 function displayResults(movies) {
     const resultsSection = document.getElementById('results');
@@ -46,7 +67,6 @@ function displayResults(movies) {
 
         const movieTitle = document.createElement('h2');
         movieTitle.textContent = movie.title;
-
         const movieOverview = document.createElement('p');
         movieOverview.textContent = movie.overview;
 
@@ -55,3 +75,5 @@ function displayResults(movies) {
         resultsSection.appendChild(movieBox);
     });
 }
+
+
