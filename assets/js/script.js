@@ -92,7 +92,7 @@ function getMovieRatings(title, year, movieBox) {
     //  OMDb API key
     const apiKey = '311fbec3';
 
-    const omdbUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${title}&y=${year}`;
+    const omdbUrl = `https://www.omdbapi.com/?apikey=${apiKey}&t=${title}&y=${year}`;
     // fetching data from the Omdb 
     fetch(omdbUrl)
         .then(response => {
