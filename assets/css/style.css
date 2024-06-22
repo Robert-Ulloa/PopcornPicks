@@ -108,6 +108,7 @@ body {
 }
 
 .movie-box p {
+    display: none;
     font-weight: bolder;
     font-size: 1rem;
     margin-bottom: 10px;
@@ -120,8 +121,26 @@ body {
     margin-bottom: 10px;
 }
 
-.movie-box:hover {
-    opacity: 0.8;
-    border:10px solid white;
+
+
+.movie-box:hover img  {
+    display:none;
     
+}
+
+.movie-box:hover h2 {
+    display: none;
+   
+}
+.movie-box:hover p{
+    display: block;
+    opacity: 0.8;
+    border:2px solid white;
+    border-radius: 5px;
+
+}
+
+.movie-box:hover {
+    border:5px solid white;
+    opacity: 0.8;
 }
