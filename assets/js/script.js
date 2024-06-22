@@ -1,16 +1,16 @@
 
-
+// Added the even listener hear so that this data is activated after the html is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('searchButton').addEventListener('click', function (event) {
         event.preventDefault(); // Prevent form submission
         searchMovies();
     });
 });
-
+// Tmdb function to fetch data from their entire database
 function searchMovies() {
     const apiKey = '441e8e76a168da10c7a3bb9b4464a698';
     const query = document.getElementById('movieSearch').value;
-    const encodedQuery = encodeURIComponent(query);
+    const encodedQuery = encodeURIComponent(query); // encodeUriComponent was used here to encode the query string
     const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodedQuery}`;
 
     clearResults();
