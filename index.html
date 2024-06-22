@@ -33,7 +33,10 @@
                 <section class="search-section">
                     <div class="field">
                         <div class="control">
-                            <input class="input is-dark" type="text" id="movieSearch" placeholder="Search for Movie titles" onkeydown="searchMovies(event)">
+                            <!-- i took out this for now beacuse it might be causing issues onkeydown="searchMovies(event)-->
+                             <label for="searching">Search</label>
+                            <input class="input is-dark" type="text" id="movieSearch" placeholder="Search for Movie titles">
+                            <button id="searchButton" >Search</button>
                         </div>
                     </div>
                 </section>
@@ -46,7 +49,7 @@
         </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="movieTitle">
         <div class="content has-text-centered">
             <p>
                 <strong>PopcornPicks</strong> by <a href="#">JRT</a>.
