@@ -88,3 +88,59 @@ body {
     padding: 20px;
     text-align: center;
 }
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie-box {
+    flex:  25%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.movie-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.movie-box p {
+    display: none;
+    font-weight: bolder;
+    font-size: 1rem;
+    margin-bottom: 10px;
+
+}
+
+.movie-box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+
+.movie-box:hover img  {
+    display:none;
+    
+}
+
+.movie-box:hover h2 {
+    display: none;
+   
+}
+.movie-box:hover p{
+    display: block;
+    opacity: 0.8;
+    border:2px solid white;
+    border-radius: 5px;
+
+}
+
+.movie-box:hover {
+    border:5px solid white;
+    opacity: 0.8;
+}
