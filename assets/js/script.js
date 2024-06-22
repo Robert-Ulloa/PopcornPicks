@@ -35,7 +35,7 @@ function searchMovies() {
             displayErrorMessage('Failed to fetch movies');
         });
 }
-
+// function to create contaier were movie data is displayed
 function displayResults(movies) {
     const resultsSection = document.getElementById('results');
 
@@ -66,10 +66,10 @@ function displayResults(movies) {
         if (movie.poster_path) {
             fetchPosterImage(movie.poster_path, movieBox);
         } else {
-            console.error('No poster path available for:', movie.title);
+            console.error('No poster path:', movie.title);
         }
 
-        // Fetch and display ratings for the movie
+        // Fetch and display ratings for the movie using the split method and grabbing the first item in the arry
         getMovieRatings(movie.title, movie.release_date ? movie.release_date.split('-')[0] : null, movieBox);
 
         resultsSection.appendChild(movieBox);
@@ -77,7 +77,7 @@ function displayResults(movies) {
 }
 
 function fetchPosterImage(posterPath, movieBox) {
-    const imageUrl = `https://image.tmdb.org/t/p/w500${posterPath}`;
+    const imageUrl = `https://image.tmdb.org/t/p/w200${posterPath}`;
     const imgElement = document.createElement('img');
     imgElement.src = imageUrl;
     imgElement.alt = 'Movie Poster';
@@ -88,12 +88,12 @@ function fetchPosterImage(posterPath, movieBox) {
 }
 
 function getMovieRatings(title, year, movieBox) {
-   
+
     //  OMDb API key
     const apiKey = '311fbec3';
 
     const omdbUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${title}&y=${year}`;
-
+    // fetching data from the Omdb 
     fetch(omdbUrl)
         .then(response => {
             if (!response.ok) {
@@ -125,12 +125,12 @@ function getMovieRatings(title, year, movieBox) {
             displayErrorMessage('Failed to fetch ratings');
         });
 }
-
+// function that clears previous search results
 function clearResults() {
     const resultsSection = document.getElementById('results');
-    resultsSection.innerHTML = ''; // Clear previous results
+    resultsSection.innerHTML = ''; 
 }
-
+// Error message function
 function displayErrorMessage(message) {
     const resultsSection = document.getElementById('results');
     resultsSection.innerHTML = `<p>${message}</p>`;
