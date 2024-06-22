@@ -13,6 +13,8 @@ function searchMovies() {
     const encodedQuery = encodeURIComponent(query);
     const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodedQuery}`;
 
+    clearResults();
+
     fetch(searchUrl)
         .then(response => {
             if (!response.ok) {
@@ -86,10 +88,7 @@ function fetchPosterImage(posterPath, movieBox) {
 }
 
 function getMovieRatings(title, year, movieBox) {
-    // if (!year) {
-    //     console.error('Release year not available for:', title);
-    //     return;
-    // }
+   
     //  OMDb API key
     const apiKey = '311fbec3';
 
