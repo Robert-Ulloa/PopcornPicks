@@ -100,3 +100,38 @@ body {
     bottom: 0;
     width: 100%;
 }
+
+h2{
+    display: none;
+}
+
+p {
+    display: None;
+}
+
+#top-5 {
+    margin-top:10px
+}
+
+
+img {
+ 
+    width: 50%;
+}
+
+.watchlist {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Update the "Favorites" container to display movies in rows */
+#genre-sections {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie-box {
+   width:15%;
+   margin:10px;
+}
+

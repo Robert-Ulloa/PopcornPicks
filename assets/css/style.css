@@ -150,14 +150,14 @@ button {
     margin-bottom:10px ;
     background-color: #3498dbb5;
     color: white;
-    padding: 5px 10px;
+    padding:5px 20px 5px 20px;
     border: none;
     border-radius: 5px;
 }
 
 button:hover {
     background-color: #03274e9a;
-    padding:0px 20px 4px 20px;
+    padding:5px 20px 5px 20px;
 }
 
 .movie-box:hover button {
@@ -193,6 +193,6 @@ button:hover {
     font-weight: bolder;
     font-size: larger;
     margin-top:5px;
-    padding:0px 20px 4px 20px;
+    padding:5px 20px 5px 20px;
     background-color: #021326;
 }
