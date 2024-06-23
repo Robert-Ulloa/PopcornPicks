@@ -47,7 +47,7 @@ function displayResults(movies) {
     }
 
     // Maximum number of movies to display
-    const maxMovies = Math.min(movies.length, 6);
+    const maxMovies = Math.min(movies.length, 9);
 
     for (let i = 0; i < maxMovies; i++) {
         const movie = movies[i];
