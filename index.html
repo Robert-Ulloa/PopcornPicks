@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <!-- Banner Section -->
+    <!-- Header section with navigation -->
     <header class="hero is-dark">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title">
-                    PopcornPicks
-                </h1>
+                <h1 class="title">PopcornPicks</h1>
+                 <!-- Navigation bar -->
                 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
                     <div class="navbar-menu">
                         <div class="navbar-start">
+                           <!-- Link to the watchlist page -->
                             <a class="navbar-item" href="watchlist.html">Watchlist</a>
                         </div>
                     </div>
@@ -24,41 +24,31 @@
             </div>
         </div>
     </header>
-
-    <!-- Main Content -->
+    <!-- Main content section -->
     <main class="section">
         <div class="container">
-            <!-- Home Section -->
+            <!-- Home section containing the search bar and results -->
             <section id="homeSection" class="section">
                 <section class="search-section">
                     <div class="field">
                         <div class="control">
-                            <!-- i took out this for now beacuse it might be causing issues onkeydown="searchMovies(event)-->
-                             <!-- Added id="movieSearch" -->
+                            <!-- Input field for searching movie titles -->
                             <input class="input is-dark" type="text" id="movieSearch" placeholder="Search for Movie titles">
-                            <!-- Added button with id="searchButton" and class="Sbutton" -->
-                            <button class="Sbutton" id="searchButton" >Search</button>
+                            <button class="Sbutton" id="searchButton">Search</button>
                         </div>
                     </div>
                 </section>
-
-                <!-- Results Section -->
-                 <!-- Added id="results" -->
                 <section id="results" class="section">
                     <!-- Movie boxes will be populated here dynamically -->
                 </section>
             </section>
         </div>
     </main>
-
     <footer class="footer" id="movieTitle">
         <div class="content has-text-centered">
-            <p>
-                <strong>PopcornPicks</strong> by <a href="#">JRT</a>.
-            </p>
+            <p><strong>PopcornPicks</strong> by <a href="#">JRT</a>.</p>
         </div>
     </footer>
-
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
