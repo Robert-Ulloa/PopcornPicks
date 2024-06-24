@@ -1,5 +1,5 @@
 /*Bulma link*/
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css";
 
 /*Google font link*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -20,6 +20,13 @@ body {
 
 .navbar-item {
     color: #00aaff;
+    font-size: larger;
+    border-radius: .6rem;
+    box-shadow: 0 0 1rem 0px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+
+    
 }
 
 .navbar-item:hover {
@@ -28,7 +35,14 @@ body {
 }
 
 .title {
-    color: #00aaff;
+    color: #dae4e8;
+    align-items: center;
+
+}
+
+.logo{
+    width: 200px;
+    margin-right: 100px;
 }
 
 .input.is-dark {
@@ -88,6 +102,7 @@ body {
     color: #ffffff;
     padding: 20px;
     text-align: center;
+    align-items: botton;
 }
 
 #results {
@@ -188,6 +203,7 @@ button:hover {
     border-radius: 10px;
 }
 
+
 .Sbutton {
     display:block;
     font-weight: bolder;
@@ -196,3 +212,37 @@ button:hover {
     padding:5px 20px 5px 20px;
     background-color: #021326;
 }
+
+/* animation styles */
+
+
+.animated-title {
+    animation: moveInTop 2s ease-out forwards;
+}
+
+.animated-logo {
+    animation: moveInTop 2s ease-out forwards;
+}
+
+.animated-watchlist {
+    animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes moveInTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
