@@ -74,7 +74,7 @@ function displayResults(movies) {
         if (movie.poster_path) {
             fetchPosterImage(movie.poster_path, movieBox);
         } else {
-            console.error('No poster path:', movie.title);
+            displayDefaultImage(movieBox);
         }
 
         // Fetch and display ratings for the movie using the split method and grabbing the first item in the array
@@ -92,6 +92,17 @@ function fetchPosterImage(posterPath, movieBox) {
     imgElement.classList.add('poster');
 
     // Append the poster image to the movie box
+    movieBox.appendChild(imgElement);
+}
+
+function displayDefaultImage(movieBox) {
+    const defaultImageUrl = './assets/img/default poster image.jpg'; // Path to your default image
+    const imgElement = document.createElement('img');
+    imgElement.src = defaultImageUrl;
+    imgElement.alt = 'Default Movie Poster';
+    imgElement.classList.add('poster');
+
+    // Append the default image to the movie box
     movieBox.appendChild(imgElement);
 }
 
