@@ -7,7 +7,7 @@
 /* In your CSS file (./assets/css/style.css) */
 @import url('https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css');
 
-/* Your custom styles */
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #0c0b20;
@@ -55,28 +55,6 @@ body {
 .button.is-info:hover {
     background-color: #0056b3;
     border-color: #0056b3;
-
-
-}
-
-#movie-details-container {
-    padding: 20px;
-    background: #2e2e2e;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.list {
-    padding-left: 20px;
-}
-
-.list li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background: #2e2e2e;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    color: #00aaff;
 }
 
 .button.is-warning {
@@ -89,6 +67,27 @@ body {
     background-color: #ffcc00;
     border-color: #ffcc00;
 }
+
+.button.add-to-top-five,
+.button.remove-from-top-five {
+    display: block;
+    font-weight: bolder;
+    font-size: 0.875rem; /* Adjusted for appropriate size */
+    margin-top: 5px;
+    padding: 0.5rem 1rem;
+    background-color: #021326;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center; /* Ensure text alignment */
+}
+
+.button.add-to-top-five:hover,
+.button.remove-from-top-five:hover {
+    background-color: #03274e9a;
+    padding: 0.5rem 1rem;
+}
+
 /*Footer*/
 
 .footer {
@@ -101,23 +100,17 @@ body {
     width: 100%;
 }
 
-h2{
-    display: none;
+#top-5-section,
+#genre-sections {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 200px; /* Ensure minimum height even when empty */
 }
-
-p {
-    display: None;
-}
-
-#top-5 {
-    margin-top:10px
-}
-
 
 img {
- 
     width: 50%;
-    margin-top:40px;
+    margin-top: 40px;
 }
 
 .watchlist {
@@ -126,17 +119,132 @@ img {
 }
 
 /* Update the "Favorites" container to display movies in rows */
-#genre-sections {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .movie-box {
-   width:15%;
-   margin:10px;
+    width: 15%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
-.subtitle {
+.movie-box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.movie-box h2,
+.movie-box p,
+.movie-box .ratings,
+.movie-box button {
+    width: 100%; /* Ensure all text elements and button match the image width */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.movie-box h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #007BFF;
+    display: none;
+}
+
+.movie-box p,
+.movie-box .ratings p {
+    font-size: 1rem;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    color: #007BFF;
+    display: none;
+}
+
+.movie-box button {
+    display: none;
+    margin-bottom: 10px;
+    background-color: #3498dbb5;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.movie-box button:hover {
+    background-color: #03274e9a;
+    padding: 5px 20px;
+}
+
+.movie-box:hover img {
+    display: none;
+}
+
+.movie-box:hover h2,
+.movie-box:hover p,
+.movie-box:hover .ratings,
+.movie-box:hover button {
     display: block;
-    margin-right:10px;
+}
+
+.movie-box:hover {
+    background-color: #e0e0e0;
+    border: 2px solid white;
+    opacity: 0.8;
+    box-shadow: 0 0 100px rgba(255, 254, 254, 0.5);
+    border-radius: 10px;
+}
+
+.movie-box .ratings {
+    display: none;
+    margin-bottom: 10px;
+}
+
+.movie-box:hover .ratings {
+    display: block;
+}
+
+.Sbutton {
+    display: block;
+    font-weight: bolder;
+    font-size: larger;
+    margin-top: 5px;
+    padding: 5px 20px;
+    background-color: #021326;
+}
+
+/* animation styles */
+
+.animated-title {
+    animation: moveInTop 2s ease-out forwards;
+}
+
+.animated-logo {
+    animation: moveInTop 2s ease-out forwards;
+}
+
+.animated-watchlist {
+    animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes moveInTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
