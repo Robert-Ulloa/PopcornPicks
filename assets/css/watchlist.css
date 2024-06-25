@@ -1,12 +1,5 @@
-/*Bulma link*/
-@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
-
-/*Google font link*/
+/* Google font link */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* In your CSS file (./assets/css/style.css) */
-@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css');
-
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -15,8 +8,30 @@ body {
     padding: 20px;
 }
 
+.hero.is-dark {
+    background-color: #1a1a1a;
+}
+
+.navbar.is-dark {
+    background-color: #1a1a1a;
+}
+
+.navbar-item {
+    color: #00aaff;
+    font-size: larger;
+    border-radius: .6rem;
+    box-shadow: 0 0 1rem 0px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+}
+
+.navbar-item:hover {
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: auto;
     padding: 20px;
     background: #1e1e1e;
@@ -41,7 +56,7 @@ body {
     margin-bottom: 20px;
 }
 
-.input {
+.input.is-dark {
     background-color: #2c2c2c;
     border: 1px solid #3c3c3c;
     color: #e0e0e0;
@@ -72,14 +87,14 @@ body {
 .button.remove-from-top-five {
     display: block;
     font-weight: bolder;
-    font-size: 0.875rem; /* Adjusted for appropriate size */
+    font-size: 0.875rem;
     margin-top: 5px;
     padding: 0.5rem 1rem;
     background-color: #021326;
     color: white;
     border: none;
     border-radius: 5px;
-    text-align: center; /* Ensure text alignment */
+    text-align: center;
 }
 
 .button.add-to-top-five:hover,
@@ -88,7 +103,7 @@ body {
     padding: 0.5rem 1rem;
 }
 
-/*Footer*/
+/* Footer */
 
 .footer {
     background-color: #1a1a1a;
@@ -100,28 +115,35 @@ body {
     width: 100%;
 }
 
-#top-5-section,
-#genre-sections {
-    margin-top: 10px;
+.columns {
     display: flex;
     flex-wrap: wrap;
-    min-height: 200px; /* Ensure minimum height even when empty */
 }
 
-img {
-    width: 50%;
-    margin-top: 40px;
+.column {
+    padding: 10px;
 }
 
+/* Watchlist and Top 5 Styling */
 .watchlist {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
-/* Update the "Favorites" container to display movies in rows */
+.top5 {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .movie-box {
-    width: 15%;
-    margin: 10px;
+    width: 100%;
+    margin: 10px 0;
     padding: 10px;
     background-color: #2e2e2e;
     border-radius: 10px;
@@ -142,7 +164,7 @@ img {
 .movie-box p,
 .movie-box .ratings,
 .movie-box button {
-    width: 100%; /* Ensure all text elements and button match the image width */
+    width: 100%;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -173,13 +195,33 @@ img {
     border-radius: 5px;
 }
 
+.movie-box:hover img {
+    display: none;
+}
+
+.movie-box:hover h2,
+.movie-box:hover p,
+.movie-box:hover .ratings,
+.movie-box:hover button {
+    display: block;
+}
+
+.movie-box:hover {
+    background-color: #e0e0e0;
+    border: 2px solid white;
+    opacity: 0.8;
+    box-shadow: 0 0 100px rgba(255, 254, 254, 0.5);
+    border-radius: 10px;
+}
 
 .movie-box .ratings {
     display: none;
     margin-bottom: 10px;
 }
 
-
+.movie-box:hover .ratings {
+    display: block;
+}
 
 .Sbutton {
     display: block;
@@ -190,7 +232,7 @@ img {
     background-color: #021326;
 }
 
-/* animation styles */
+/* Animation styles */
 
 .animated-title {
     animation: moveInTop 2s ease-out forwards;
@@ -217,9 +259,4 @@ img {
 
 @keyframes fadeIn {
     0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+       
