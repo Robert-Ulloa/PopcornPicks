@@ -155,7 +155,7 @@ function addToWatchlist(movie) {
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
     watchlist.push(movie);
     localStorage.setItem('watchlist', JSON.stringify(watchlist));
-    alert(`${movie.title} has been added to your watchlist.`);
+    
 }
 
 // Function that clears previous search results

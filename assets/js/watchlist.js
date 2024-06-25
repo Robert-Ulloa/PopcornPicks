@@ -108,10 +108,9 @@ function addToTopFive(movie) {
         topFive.push(movie);
         localStorage.setItem('topFive', JSON.stringify(topFive));
         displayTopFive();
-        alert(`${movie.title} has been added to the Top 5.`);
-    } else {
-        alert('Top 5 is already full.');
-    }
+    } 
+       
+
 }
 
 // Function to remove a movie from the top 5
@@ -120,7 +119,6 @@ function removeFromTopFive(movie) {
     topFive = topFive.filter(m => m.title !== movie.title);
     localStorage.setItem('topFive', JSON.stringify(topFive));
     displayTopFive();
-    alert(`${movie.title} has been removed from the Top 5.`);
 }
 
 // Function to check if the movie is X-Rated or adult
