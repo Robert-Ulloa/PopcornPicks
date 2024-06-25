@@ -16,37 +16,39 @@ function displayWatchlist() {
 
     // Iterate through each movie in the watchlist and create elements to display them
     watchlist.forEach(movie => {
-        const movieBox = document.createElement('div');
-        movieBox.classList.add('movie-box');
+        if (!isAdultContent(movie)) {
+            const movieBox = document.createElement('div');
+            movieBox.classList.add('movie-box');
 
-        const movieTitle = document.createElement('h2');
-        movieTitle.textContent = movie.title;
+            const movieTitle = document.createElement('h2');
+            movieTitle.textContent = movie.title;
 
-        const movieOverview = document.createElement('p');
-        movieOverview.textContent = movie.overview;
+            const movieOverview = document.createElement('p');
+            movieOverview.textContent = movie.overview;
 
-        movieBox.appendChild(movieTitle);
-        movieBox.appendChild(movieOverview);
+            movieBox.appendChild(movieTitle);
+            movieBox.appendChild(movieOverview);
 
-        // If the movie has a poster, create an img element and append it to the movieBox
-        if (movie.poster_path) {
-            const imageUrl = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
-            const imgElement = document.createElement('img');
-            imgElement.src = imageUrl;
-            imgElement.alt = 'Movie Poster';
-            imgElement.classList.add('poster');
+            // If the movie has a poster, create an img element and append it to the movieBox
+            if (movie.poster_path) {
+                const imageUrl = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
+                const imgElement = document.createElement('img');
+                imgElement.src = imageUrl;
+                imgElement.alt = 'Movie Poster';
+                imgElement.classList.add('poster');
 
-            movieBox.appendChild(imgElement);
+                movieBox.appendChild(imgElement);
+            }
+
+            // Add to Top 5 button
+            const addToTopFiveButton = document.createElement('button');
+            addToTopFiveButton.classList.add('button', 'add-to-top-five');
+            addToTopFiveButton.textContent = 'Add to Top 5';
+            addToTopFiveButton.addEventListener('click', () => addToTopFive(movie));
+            movieBox.appendChild(addToTopFiveButton);
+
+            genreSections.appendChild(movieBox);
         }
-
-        // Add to Top 5 button
-        const addToTopFiveButton = document.createElement('button');
-        addToTopFiveButton.classList.add('button', 'add-to-top-five');
-        addToTopFiveButton.textContent = 'Add to Top 5';
-        addToTopFiveButton.addEventListener('click', () => addToTopFive(movie));
-        movieBox.appendChild(addToTopFiveButton);
-
-        genreSections.appendChild(movieBox);
     });
 }
 
@@ -61,38 +63,41 @@ function displayTopFive() {
         return;
     }
 
+    // Iterate through each movie in the top 5 list and create elements to display them
     topFive.forEach(movie => {
-        const movieBox = document.createElement('div');
-        movieBox.classList.add('movie-box');
+        if (!isAdultContent(movie)) {
+            const movieBox = document.createElement('div');
+            movieBox.classList.add('movie-box');
 
-        const movieTitle = document.createElement('h2');
-        movieTitle.textContent = movie.title;
+            const movieTitle = document.createElement('h2');
+            movieTitle.textContent = movie.title;
 
-        const movieOverview = document.createElement('p');
-        movieOverview.textContent = movie.overview;
+            const movieOverview = document.createElement('p');
+            movieOverview.textContent = movie.overview;
 
-        movieBox.appendChild(movieTitle);
-        movieBox.appendChild(movieOverview);
+            movieBox.appendChild(movieTitle);
+            movieBox.appendChild(movieOverview);
 
-        // If the movie has a poster, create an img element and append it to the movieBox
-        if (movie.poster_path) {
-            const imageUrl = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
-            const imgElement = document.createElement('img');
-            imgElement.src = imageUrl;
-            imgElement.alt = 'Movie Poster';
-            imgElement.classList.add('poster');
+            // If the movie has a poster, create an img element and append it to the movieBox
+            if (movie.poster_path) {
+                const imageUrl = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
+                const imgElement = document.createElement('img');
+                imgElement.src = imageUrl;
+                imgElement.alt = 'Movie Poster';
+                imgElement.classList.add('poster');
 
-            movieBox.appendChild(imgElement);
+                movieBox.appendChild(imgElement);
+            }
+
+            // Remove from Top 5 button
+            const removeFromTopFiveButton = document.createElement('button');
+            removeFromTopFiveButton.classList.add('button', 'remove-from-top-five');
+            removeFromTopFiveButton.textContent = 'Remove from Top 5';
+            removeFromTopFiveButton.addEventListener('click', () => removeFromTopFive(movie));
+            movieBox.appendChild(removeFromTopFiveButton);
+
+            topFiveSection.appendChild(movieBox);
         }
-
-        // Remove from Top 5 button
-        const removeFromTopFiveButton = document.createElement('button');
-        removeFromTopFiveButton.classList.add('button', 'remove-from-top-five');
-        removeFromTopFiveButton.textContent = 'Remove from Top 5';
-        removeFromTopFiveButton.addEventListener('click', () => removeFromTopFive(movie));
-        movieBox.appendChild(removeFromTopFiveButton);
-
-        topFiveSection.appendChild(movieBox);
     });
 }
 
@@ -116,4 +121,9 @@ function removeFromTopFive(movie) {
     localStorage.setItem('topFive', JSON.stringify(topFive));
     displayTopFive();
     alert(`${movie.title} has been removed from the Top 5.`);
+}
+
+// Function to check if the movie is X-Rated or adult
+function isAdultContent(movie) {
+    return movie.adult === true || movie.rating === 'X';
 }
