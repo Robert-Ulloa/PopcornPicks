@@ -14,7 +14,9 @@ function searchMovies() {
     const apiKey = '441e8e76a168da10c7a3bb9b4464a698';
     const query = document.getElementById('movieSearch').value;
     const encodedQuery = encodeURIComponent(query); // encodeURIComponent was used here to encode the query string
-    const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodedQuery}&include_adult=false`;
+
+    const searchUrl = `https://api.themoviedb.org/3/search/movie?&api_key=${apiKey}&query=${encodedQuery}`
+   
 
     clearResults();
 
