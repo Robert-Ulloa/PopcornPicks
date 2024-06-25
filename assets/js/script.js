@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
 function searchMovies() {
     const apiKey = '441e8e76a168da10c7a3bb9b4464a698';
     const query = document.getElementById('movieSearch').value;
+    // research more into encodeURIcomponet and how it pertains to query for presentaion
     const encodedQuery = encodeURIComponent(query);
+    // reasearch more into the paramters of this api call
     const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodedQuery}`;
 
     clearResults();
@@ -72,7 +74,7 @@ function displayResults(movies) {
         } else {
             displayDefaultImage(movieBox);
         }
-
+        // be able to describe where i got this from and what it means(travis)
         getMovieRatings(movie.title, movie.release_date ? movie.release_date.split('-')[0] : null, movieBox);
 
         resultsSection.appendChild(movieBox);
@@ -80,6 +82,7 @@ function displayResults(movies) {
 }
 
 function fetchPosterImage(posterPath, movieBox) {
+    // be able to describe where i got this from and what it means(travis)
     const imageUrl = `https://image.tmdb.org/t/p/w200${posterPath}`;
     const imgElement = document.createElement('img');
     imgElement.src = imageUrl;
@@ -140,7 +143,7 @@ function addToWatchlist(movie) {
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
     watchlist.push(movie);
     localStorage.setItem('watchlist', JSON.stringify(watchlist));
-    alert(`${movie.title} has been added to your watchlist.`);
+    // removed alert for adding too watchlist
 }
 
 function clearResults() {

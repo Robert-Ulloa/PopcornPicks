@@ -106,7 +106,8 @@ body {
 /* Footer */
 
 .footer {
-    background-color: #1a1a1a;
+    /* class color for bulma */
+    background-color:hsl(0, 0%, 21%);
     color: #ffffff;
     padding: 20px;
     text-align: center;
@@ -226,6 +227,10 @@ body {
 
 .animated-watchlist {
     animation: fadeIn 2s ease-out forwards;
+}
+/* added bulma class color */
+.popcornpicks {
+    color:hsl(0, 0%, 100%);
 }
 
 @keyframes moveInTop {
