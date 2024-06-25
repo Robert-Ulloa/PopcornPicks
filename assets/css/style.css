@@ -1,5 +1,4 @@
-/*Bulma link*/
-@import "https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css";
+
 
 /*Google font link*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -94,7 +93,7 @@ body {
     border-color: #ffcc00;
 }
 
-.footer {
+footer {
     background-color: #1a1a1a;
     color: #ffffff;
     padding: 20px;
