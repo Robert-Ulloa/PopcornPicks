@@ -4,40 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PopcornPicks Watchlist</title>
-    <link rel="stylesheet" href="./assets/css/watchlist.css">
+    <!-- Link to Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script defer src="./assets/js/watchlist.js"></script>
 </head>
 <body>
     <!-- Header section with navigation -->
     <header class="hero is-dark">
         <div class="hero-body">
-            <div class="container has-text-centered">
-                <h1 class="title">PopcornPicks Watchlist</h1>
-                <!-- Navigation bar -->
-                <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-                    <div class="navbar-menu">
-                        <div class="navbar-start">
-                            <!-- Link to go back to the home page -->
-                            <a class="navbar-item" href="index.html">Back to Home</a>
-                        </div>
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-narrow animated-logo">
+                        <img src="./assets/img/logo.png" alt="PopcornPicks Logo" class="logo">
                     </div>
-                </nav>
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 animated-title">PopcornPicks Watchlist</h1>
+                    </div>
+                    <div class="column is-narrow">
+                        <!-- Navigation bar -->
+                        <nav class="navbar is-dark animated-watchlist" role="navigation" aria-label="main navigation">
+                            <div class="navbar-menu">
+                                <div class="navbar-start">
+                                    <!-- Link to go back to the home page -->
+                                    <a class="navbar-item is-1" href="index.html">Back to Home</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="section">
-        <div class="container">
-            <section class="watchlist">
-                <div id="genre-sections">
+        <div class="container columns">
+            <section class="column is-half watchlist">
+                <h2 class="subtitle">Watchlist</h2>
+                <div id="genre-sections" class="columns is-multiline">
                     <!-- Genre sections will be dynamically added here by JavaScript -->
-                    <h2 class="subtitle">Watchlist</h2>
                 </div>
             </section>
-            <section class="top5">
-                <div id="top-5-section" class="movie-container">
-                    <h2 class="subtitle">Top 5</h2>
+            <section class="column is-half top5">
+                <h2 class="subtitle"></h2>
+                <div id="top-5-section" class="columns is-multiline">
                 </div>
             </section>
         </div>
@@ -46,7 +57,7 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>PopcornPicks</strong> by <a href="#">JRT</a>.
+                <strong>PopcornPicks</strong> by <a href="https://github.com/Robert-Ulloa/PopcornPicks">JRT</a>.
             </p>
         </div>
     </footer>
