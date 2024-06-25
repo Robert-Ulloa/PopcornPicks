@@ -44,10 +44,17 @@ function displayWatchlist() {
             const addToTopFiveButton = document.createElement('button');
             addToTopFiveButton.classList.add('button', 'add-to-top-five');
             addToTopFiveButton.textContent = 'Add to Top 5';
-            addToTopFiveButton.addEventListener('click', () => addToTopFive(movie));
+            addToTopFiveButton.addEventListener('click', () => {
+
+            
+                movieBox.remove();
+                addToTopFive(movie);
+            });
+
             movieBox.appendChild(addToTopFiveButton);
 
             genreSections.appendChild(movieBox);
+
         }
     });
 }

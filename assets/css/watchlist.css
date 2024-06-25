@@ -179,7 +179,9 @@ img {
     margin-bottom: 10px;
 }
 
-
+.movie-box:hover .ratings {
+    display: block;
+}
 
 .Sbutton {
     display: block;
