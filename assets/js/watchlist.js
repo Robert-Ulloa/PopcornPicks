@@ -1,3 +1,5 @@
+// does this need to be wrapped around everything in here?
+
 document.addEventListener('DOMContentLoaded', function () {
     displayWatchlist();
     displayTopFive();
@@ -73,7 +75,7 @@ function displayTopFive() {
     let topFive = JSON.parse(localStorage.getItem('topFive')) || [];
 
     console.log('Loaded topFive:', topFive); // Debugging line
-
+    // we need to keep this and try to play with the css for it and git rid of the one on the html
     topFiveSection.innerHTML = '<h2 class="subtitle">Top 5</h2>';
 
     if (topFive.length === 0) {
