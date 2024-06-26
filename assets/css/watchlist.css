@@ -56,6 +56,7 @@ body {
     color: #c3d5df;  
     text-align: left;
     margin-bottom: 1rem;
+    font-weight: bolder;
 }
 
 
@@ -138,7 +139,7 @@ footer {
 .movie-box p,
 .movie-box .ratings,
 .movie-box button {
-    width: 100%; /* Ensure all text elements and button match the image width */
+    width: 100%; 
     text-align: center;
     margin-bottom: 10px;
 }
