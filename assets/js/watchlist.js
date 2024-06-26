@@ -76,7 +76,7 @@ function displayTopFive() {
 
     console.log('Loaded topFive:', topFive); // Debugging line
     // we need to keep this and try to play with the css for it and git rid of the one on the html
-    topFiveSection.innerHTML = '<h2 class="subtitle">Top 5</h2>';
+    topFiveSection.innerHTML = '<h2 class="subtitle"></h2>';
 
     if (topFive.length === 0) {
         return;
