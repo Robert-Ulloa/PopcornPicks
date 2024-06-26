@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PopcornPicks Watchlist</title>
-    <!-- moved the style css up here -->
-        <link rel="stylesheet" href="./assets/css/watchlist.css">
+    <link rel="stylesheet" href="./assets/css/watchlist.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
-    <!-- this is linking to the watchlist html too which is causing problems -->
-
     <script defer src="./assets/js/watchlist.js"></script>
 </head>
 <body>
@@ -43,20 +40,17 @@
                     <!-- Genre sections will be dynamically added here by JavaScript -->
                 </div>
             </section>
+            <div class="divider"></div>
             <section class="column is-half top5">
-                <!-- took this out for now beacuse the logic js is overtaking it -->
-                <!-- <h2 class="subtitle">Top 5</h2> -->
                 <div id="top-5-section" class="columns is-multiline">
                 </div>
             </section>
         </div>
     </main>
-    <!-- class color from bulmda for dark footer -->
     <footer class="footer has-background-dark">
         <div class="content has-text-centered">
             <p>
-                <!-- added class for white popcorn picks color -->
-                <strong  class="has-text-white">PopcornPicks</strong> by <a href="https://github.com/Robert-Ulloa/PopcornPicks">JRT</a>.
+                <strong class="has-text-white">PopcornPicks</strong> by <a href="https://github.com/Robert-Ulloa/PopcornPicks">JRT</a>.
             </p>
         </div>
     </footer>
