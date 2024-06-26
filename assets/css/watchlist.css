@@ -119,20 +119,21 @@ footer {
     flex: 25%;
     margin: 10px;
     padding: 10px;
-    background-color: #2e2e2e;
     border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 6px rgb(240, 141, 99);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    max-width: 150px;
+    max-width: 200px;
 }
 
 .movie-box img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
+    max-width: 200px;
+    
 }
 
 .movie-box h2,
