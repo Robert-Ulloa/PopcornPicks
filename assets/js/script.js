@@ -94,6 +94,12 @@ function displayResults(movies) {
 function showModal(){
 const modal =document.querySelector('#modal');
     modal.classList.add('is-active');
+
+    setTimeout(() =>{
+
+        hideModal();
+    },1000);
+
 }
 function hideModal(){
     const modal = document.querySelector('#modal');
