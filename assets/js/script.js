@@ -44,6 +44,8 @@ function searchMovies() {
 
 function displayResults(movies) {
     const resultsSection = document.getElementById('results');
+    const modal = document.querySelector('#modal');
+    const modalClose = modal.querySelector('.modal-close');
 
     clearResults();
 
@@ -63,6 +65,7 @@ function displayResults(movies) {
         addToWatchlistButton.textContent = 'Add to Watchlist';
         addToWatchlistButton.addEventListener('click', function () {
             addToWatchlist(movie);
+            showModal();
         });
 
         movieBox.appendChild(movieTitle);
@@ -78,7 +81,23 @@ function displayResults(movies) {
         getMovieRatings(movie.title, movie.release_date ? movie.release_date.split('-')[0] : null, movieBox);
 
         resultsSection.appendChild(movieBox);
-    }
+
+        modalClose.addEventListener('click' , hideModal);
+        modal.addEventListener('click', function(event){
+
+            if(event.target === modal)
+                hideModal();
+        }
+    
+    )};
+}
+function showModal(){
+const modal =document.querySelector('#modal');
+    modal.classList.add('is-active');
+}
+function hideModal(){
+    const modal = document.querySelector('#modal');
+    modal.classList.remove('is-active');
 }
 
 function fetchPosterImage(posterPath, movieBox) {

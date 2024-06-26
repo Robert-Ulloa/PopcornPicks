@@ -222,6 +222,29 @@ footer {
     color:hsl(0, 0%, 100%);
 }
 
+.modal.is-active {
+    display: flex; /* Show modal when is-active class is applied */
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal-content {
+    background-color: #3498dbb5;
+    color:white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 20%;
+    max-height: 80%;
+    overflow: auto;
+    text-align: center;
+    font-weight: bolder;
+ 
+}
+
+
+
+
 @keyframes moveInTop {
     0% {
         transform: translateY(-100%);
