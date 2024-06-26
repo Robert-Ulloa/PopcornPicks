@@ -51,6 +51,14 @@ body {
     padding: 2rem 1.5rem;
 }
 
+.section-title {
+    font-size: 2rem;  
+    color: #c3d5df;  
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+
 #movie-details-container {
     padding: 20px;
     background: #2e2e2e;
