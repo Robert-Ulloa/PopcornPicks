@@ -196,9 +196,6 @@ body {
     border-radius: 5px;
 }
 
-
-
-
 .movie-box .ratings {
     display: none;
     margin-bottom: 10px;
@@ -251,4 +248,8 @@ body {
     100% {
         opacity: 1;
     }
+}
+
+.top-5-movie {
+    flex:1 1 20%;
 }
