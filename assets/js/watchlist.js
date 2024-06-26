@@ -106,7 +106,7 @@ function displayTopFive() {
 
         const removeFromTopFiveButton = document.createElement('button');
         removeFromTopFiveButton.classList.add('button', 'remove-from-top-five');
-        removeFromTopFiveButton.textContent = 'Remove from Top 5';
+        removeFromTopFiveButton.textContent = 'Remove';
         removeFromTopFiveButton.addEventListener('click', () => removeFromTopFive(movie));
         movieBox.appendChild(removeFromTopFiveButton);
 
