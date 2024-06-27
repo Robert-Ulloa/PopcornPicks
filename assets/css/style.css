@@ -110,52 +110,51 @@ footer {
 
 .movie-box {
     flex: 25%;
-    margin: 10px;
+    margin: 14px;
     padding: 10px;
-    background-color: #2e2e2e;
     border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 6px rgb(233, 119, 26);
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    position: center;
 }
 
 .movie-box img {
     max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    margin-bottom: .4px;
 }
 
 .movie-box h2,
 .movie-box p,
 .movie-box .ratings,
 .movie-box button {
-    width: 100%; /* Ensure all text elements and button match the image width */
+    width: 100%; 
     text-align: center;
     margin-bottom: 10px;
+
 }
 
 .movie-box h2 {
     font-size: 1.5rem;
     margin-top: 10px;
-    color: #007BFF;
+    color: #e4ce0a;
     display: none;
 }
 
 .movie-box p,
 .movie-box .ratings p {
-    font-size: 1rem;
-    font-weight: bolder;
+    font-size: 1.05rem;
     margin-bottom: 20px;
-    color: #007BFF;
+    color: #eaebed;
     display: none;
 }
 
 .movie-box button {
     display: none;
     margin-bottom: 10px;
-    background-color: #3498dbb5;
+    background-color: #3f6fb7d8;
     color: white;
     padding: 5px 20px;
     border: none;
@@ -163,7 +162,7 @@ footer {
 }
 
 .movie-box button:hover {
-    background-color: #03274e9a;
+    background-color: #0b911f;
     padding: 5px 20px;
 }
 
@@ -179,11 +178,11 @@ footer {
 }
 
 .movie-box:hover {
-    background-color: #e0e0e0;
-    border: 2px solid white;
-    opacity: 0.8;
-    box-shadow: 0 0 100px rgba(255, 254, 254, 0.5);
+    background-color: #000000;
+    border: 2px solid rgb(236, 138, 26);
+    font-family: 'Montserrat', sans-serif;
     border-radius: 10px;
+
 }
 
 .movie-box .ratings {
