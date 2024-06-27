@@ -133,7 +133,8 @@ footer {
     width: 100%; 
     text-align: center;
     margin-bottom: 10px;
-
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(1.0); 
 }
 
 .movie-box h2 {
@@ -182,7 +183,8 @@ footer {
     border: 2px solid rgb(236, 138, 26);
     font-family: 'Montserrat', sans-serif;
     border-radius: 10px;
-
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(1.0); 
 }
 
 .movie-box .ratings {
