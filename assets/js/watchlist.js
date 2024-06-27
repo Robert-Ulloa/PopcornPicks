@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function displayWatchlist() {
     const genreSections = document.getElementById('genre-sections');
+    const modal = document.querySelector('#modal');
     if (!genreSections) {
         console.error('Element with id "genre-sections" not found.');
         return;
@@ -50,6 +51,7 @@ function displayWatchlist() {
         addToTopFiveButton.textContent = 'Add to Top 5';
         addToTopFiveButton.addEventListener('click', () => {
             addToTopFive(movie);
+            showModal('Added to Top 5');
         });
 
         const watchedButton = document.createElement('button');
@@ -58,15 +60,38 @@ function displayWatchlist() {
         watchedButton.addEventListener('click', () => {
             removeFromWatchlist(movie);
         });
+        modal.addEventListener('click', function(event){
+
+            if(event.target === modal)
+                hideModal();
+        });
 
         movieBox.appendChild(addToTopFiveButton);
         movieBox.appendChild(watchedButton);
         genreSections.appendChild(movieBox);
+
+
     });
+}
+function showModal(message) {
+    const modal = document.querySelector('#modal');
+    const modalContent = document.querySelector('.modal-content');
+    modalContent.textContent = message;
+    modal.classList.add('is-active');
+
+    setTimeout(() => {
+        hideModal();
+    }, 1000);
+}
+
+function hideModal() {
+    const modal = document.querySelector('#modal');
+    modal.classList.remove('is-active');
 }
 
 function displayTopFive() {
     const topFiveSection = document.getElementById('top-5-section');
+    
     if (!topFiveSection) {
         console.error('Element with id "top-5-section" not found.');
         return;
@@ -107,7 +132,12 @@ function displayTopFive() {
         const removeFromTopFiveButton = document.createElement('button');
         removeFromTopFiveButton.classList.add('button', 'remove-from-top-five');
         removeFromTopFiveButton.textContent = 'Remove';
-        removeFromTopFiveButton.addEventListener('click', () => removeFromTopFive(movie));
+        removeFromTopFiveButton.addEventListener('click', () => {
+            removeFromTopFive(movie);
+            showModal('Removed from Top 5');
+        });
+
+
         movieBox.appendChild(removeFromTopFiveButton);
 
         topFiveSection.appendChild(movieBox);

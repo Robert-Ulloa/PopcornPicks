@@ -222,11 +222,6 @@ footer {
     color:hsl(0, 0%, 100%);
 }
 
-.modal.is-active {
-    display: flex; /* Show modal when is-active class is applied */
-    align-items: center;
-    justify-content: center;
-}
 
 
 .modal-content {
@@ -239,7 +234,6 @@ footer {
     overflow: auto;
     text-align: center;
     font-weight: bolder;
- 
 }
 
 
