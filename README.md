@@ -42,7 +42,8 @@ https://github.com/Robert-Ulloa/PopcornPicks
 
 ## Screenshots
 
-![Screenshots show casing the funtionality of the popconrpicks](./assets/images/blogGif.gif)
+![Landing Page](./assets/img/Landing%20Page.png)
+![Watchlist Page](./assets/img/Watchlist%20page.png)
 
 ## Contributing
 
