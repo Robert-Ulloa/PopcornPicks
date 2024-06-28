@@ -111,9 +111,9 @@ footer {
 .movie-box {
     flex: 25%;
     margin: 14px;
-    padding: 10px;
+    padding: px;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgb(233, 119, 26);
+    box-shadow: 0 2px 6px rgb(163, 158, 153);
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -178,9 +178,10 @@ footer {
     display: block;
 }
 
+/*hover display for watchlist*/
 .movie-box:hover {
-    background-color: #000000;
-    border: 2px solid rgb(236, 138, 26);
+    background-color: #47475c;
+    box-shadow: 0 0 1rem 0px rgba(255, 254, 254, 0.5);
     font-family: 'Montserrat', sans-serif;
     border-radius: 10px;
     transition: opacity 0.3s ease, transform 0.3s ease;
