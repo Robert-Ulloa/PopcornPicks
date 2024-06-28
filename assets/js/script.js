@@ -1,3 +1,4 @@
+// Wait for the DOM to load before running the script
 document.addEventListener('DOMContentLoaded', function () {
     const searchButton = document.getElementById('searchButton');
     if (searchButton) {
@@ -10,11 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
     displayWatchlist();
     displayTopFive();
 });
-
+// Function to search for movies using TMDB API
 function searchMovies() {
     const apiKey = '441e8e76a168da10c7a3bb9b4464a698';
     const query = document.getElementById('movieSearch').value;
-    // research more into encodeURIcomponet and how it pertains to query for presentaion
+// encodeURIComponent ensures the query is properly formatted for a URL
     const encodedQuery = encodeURIComponent(query);
     // reasearch more into the paramters of this api call
     const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodedQuery}`;
@@ -41,7 +42,7 @@ function searchMovies() {
             displayErrorMessage('Failed to fetch movies');
         });
 }
-
+// Function to display search results
 function displayResults(movies) {
     const resultsSection = document.getElementById('results');
     const modal = document.querySelector('#modal');
@@ -78,6 +79,7 @@ function displayResults(movies) {
             displayDefaultImage(movieBox);
         }
         // be able to describe where i got this from and what it means(travis)
+        // Fetch movie ratings from OMDB API
         getMovieRatings(movie.title, movie.release_date ? movie.release_date.split('-')[0] : null, movieBox);
 
         resultsSection.appendChild(movieBox);
@@ -91,6 +93,7 @@ function displayResults(movies) {
     
     )};
 }
+// Modal
 function showModal(){
 const modal =document.querySelector('#modal');
     modal.classList.add('is-active');
@@ -101,11 +104,12 @@ const modal =document.querySelector('#modal');
     },1000);
 
 }
+// Function to hide modal after 1000ms
 function hideModal(){
     const modal = document.querySelector('#modal');
     modal.classList.remove('is-active');
 }
-
+// Function to fetch and display movie poster
 function fetchPosterImage(posterPath, movieBox) {
     // be able to describe where i got this from and what it means(travis)
     const imageUrl = `https://image.tmdb.org/t/p/w200${posterPath}`;
@@ -115,7 +119,7 @@ function fetchPosterImage(posterPath, movieBox) {
     imgElement.classList.add('poster');
     movieBox.appendChild(imgElement);
 }
-
+// Function to display a default image if no poster is available
 function displayDefaultImage(movieBox) {
     const defaultImageUrl = './assets/img/default poster image.jpg';
     const imgElement = document.createElement('img');
@@ -124,7 +128,7 @@ function displayDefaultImage(movieBox) {
     imgElement.classList.add('poster');
     movieBox.appendChild(imgElement);
 }
-
+// Function to get movie ratings from OMDB API
 function getMovieRatings(title, year, movieBox) {
     const apiKey = '311fbec3';
     const omdbUrl = `https://www.omdbapi.com/?apikey=${apiKey}&t=${title}&y=${year}`;
@@ -163,128 +167,20 @@ function getMovieRatings(title, year, movieBox) {
             movieBox.appendChild(ratingErrorElement);
         });
 }
-
+// Function to add a movie to the watchlist
 function addToWatchlist(movie) {
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
     watchlist.push(movie);
     localStorage.setItem('watchlist', JSON.stringify(watchlist));
     // removed alert for adding too watchlist
 }
-
+// Function to clear search results
 function clearResults() {
     const resultsSection = document.getElementById('results');
     resultsSection.innerHTML = '';
 }
-
+// Function to display error message
 function displayErrorMessage(message) {
     const resultsSection = document.getElementById('results');
     resultsSection.innerHTML = `<p>${message}</p>`;
-}
-
-function displayWatchlist() {
-    const genreSections = document.getElementById('genre-sections');
-    let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
-
-    console.log('Loaded watchlist:', watchlist); // Debugging line
-
-    genreSections.innerHTML = '';
-
-    if (watchlist.length === 0) {
-        genreSections.innerHTML = '<p>No movies in your watchlist.</p>';
-        return;
-    }
-
-    watchlist.forEach(movie => {
-        const movieBox = document.createElement('div');
-        movieBox.classList.add('movie-box');
-
-        const movieTitle = document.createElement('h2');
-        movieTitle.textContent = movie.title;
-
-        const movieOverview = document.createElement('p');
-        movieOverview.textContent = movie.overview;
-
-        movieBox.appendChild(movieTitle);
-        movieBox.appendChild(movieOverview);
-
-        if (movie.poster_path) {
-            const imageUrl = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
-            const imgElement = document.createElement('img');
-            imgElement.src = imageUrl;
-            imgElement.alt = 'Movie Poster';
-            imgElement.classList.add('poster');
-            movieBox.appendChild(imgElement);
-        }
-
-        const addToTopFiveButton = document.createElement('button');
-        addToTopFiveButton.classList.add('button', 'add-to-top-five');
-        addToTopFiveButton.textContent = 'Add to Top 5';
-        addToTopFiveButton.addEventListener('click', () => {
-            movieBox.remove();
-            addToTopFive(movie);
-        });
-
-        movieBox.appendChild(addToTopFiveButton);
-        genreSections.appendChild(movieBox);
-    });
-}
-
-function displayTopFive() {
-    const topFiveSection = document.getElementById('top-5-section');
-    let topFive = JSON.parse(localStorage.getItem('topFive')) || [];
-
-    console.log('Loaded topFive:', topFive); // Debugging line
-
-    topFiveSection.innerHTML = '<h2 class="subtitle">Top 5</h2>';
-
-    if (topFive.length === 0) {
-        return;
-    }
-
-    topFive.forEach(movie => {
-        const movieBox = document.createElement('div');
-        movieBox.classList.add('movie-box');
-
-        const movieTitle = document.createElement('h2');
-        movieTitle.textContent = movie.title;
-
-        const movieOverview = document.createElement('p');
-        movieOverview.textContent = movie.overview;
-
-        movieBox.appendChild(movieTitle);
-        movieBox.appendChild(movieOverview);
-
-        if (movie.poster_path) {
-            const imageUrl = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
-            const imgElement = document.createElement('img');
-            imgElement.src = imageUrl;
-            imgElement.alt = 'Movie Poster';
-            imgElement.classList.add('poster');
-            movieBox.appendChild(imgElement);
-        }
-
-        const removeFromTopFiveButton = document.createElement('button');
-        removeFromTopFiveButton.classList.add('button', 'remove-from-top-five');
-        removeFromTopFiveButton.textContent = 'Remove from Top 5';
-        removeFromTopFiveButton.addEventListener('click', () => removeFromTopFive(movie));
-        movieBox.appendChild(removeFromTopFiveButton);
-
-        topFiveSection.appendChild(movieBox);
-    });
-}
-
-function addToTopFive(movie) {
-    let topFive = JSON.parse(localStorage.getItem('topFive')) || [];
-    if (topFive.length < 5) {
-        topFive.push(movie);
-        localStorage.setItem('topFive', JSON.stringify(topFive));
-        displayTopFive();
-    }
-}
-
-function removeFromTopFive(movie) {
-    let topFive = JSON.parse(localStorage.getItem('topFive')) || [];
-    topFive = topFive.filter(m => m.title !== movie.title);
-    localStorage.setItem('topFive', JSON.stringify(topFive));
-    displayTopFive();
 }
