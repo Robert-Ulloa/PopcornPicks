@@ -110,17 +110,16 @@ footer {
 
 .movie-box {
     flex: 25%;
-    margin: 14px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgb(233, 119, 26);
+    box-shadow: 0 2px 6px rgba(240, 240, 238, 0.609);
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
-    position: center;
+    position: relative;
+    max-width: 200px;
 }
-
 .movie-box img {
     max-width: 100%;
     margin-bottom: .4px;
