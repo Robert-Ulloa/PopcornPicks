@@ -120,6 +120,7 @@ footer {
     position: relative;
     max-width: 200px;
 }
+
 .movie-box img {
     max-width: 100%;
     margin-bottom: .4px;
@@ -171,10 +172,22 @@ footer {
 }
 
 .movie-box:hover h2,
-.movie-box:hover p,
+.movie-box:hover ,
 .movie-box:hover .ratings,
 .movie-box:hover button {
     display: block;
+}
+
+.movie-box:hover p {
+    display: block;
+    font-size: 1rem; /* Adjust font size if needed */
+    margin-bottom: 10px;
+    color: #eaebed;
+
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
+    max-height: 15rem; /* Maximum height for the box */
+    line-height: 1.6rem; /* Line height to control spacing */
 }
 
 /*hover display for watchlist*/
@@ -183,7 +196,7 @@ footer {
     box-shadow: 0 0 1rem 0px rgba(255, 254, 254, 0.5);
     font-family: 'Montserrat', sans-serif;
     border-radius: 10px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 1;
     transform: scale(1.0); 
 }
 
