@@ -45,7 +45,7 @@ function searchMovies() {
 function displayResults(movies) {
     const resultsSection = document.getElementById('results');
     const modal = document.querySelector('#modal');
-    // const modalClose = modal.querySelector('.modal-close');
+    const modalClose = modal.querySelector('.modal-close');
 
     clearResults();
 
@@ -82,7 +82,7 @@ function displayResults(movies) {
 
         resultsSection.appendChild(movieBox);
 
-        // modalClose.addEventListener('click' , hideModal);
+        modalClose.addEventListener('click' , hideModal);
         modal.addEventListener('click', function(event){
 
             if(event.target === modal)

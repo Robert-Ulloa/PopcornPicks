@@ -227,6 +227,7 @@ footer {
     font-weight: bolder;
 }
 
+
 @keyframes moveInTop {
     0% {
         transform: translateY(-100%);
