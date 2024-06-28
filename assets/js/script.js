@@ -49,7 +49,7 @@ function displayResults(movies) {
 
     clearResults();
 
-    const maxMovies = Math.min(movies.length, 9);
+    const maxMovies = Math.min(movies.length, 10);
     for (let i = 0; i < maxMovies; i++) {
         const movie = movies[i];
         const movieBox = document.createElement('div');
