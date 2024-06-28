@@ -52,8 +52,8 @@ body {
 }
 
 .section-title {
-    font-size: 2rem;  
-    color: #c3d5df;  
+    font-size: 2rem;
+    color: #c3d5df;
     text-align: left;
     margin-bottom: 1rem;
     font-weight: bolder;
@@ -120,7 +120,7 @@ footer {
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgb(240, 141, 99);
+    box-shadow: 0 2px 6px rgb(247, 243, 241);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,14 +132,14 @@ footer {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
-    
+
 }
 
 .movie-box h2,
 .movie-box p,
 .movie-box .ratings,
 .movie-box button {
-    width: 100%; 
+    width: 100%;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -170,10 +170,33 @@ footer {
     border-radius: 5px;
 }
 
-.movie-box button:hover {
-    background-color: #03274e9a;
+.movie-box button {
+    display: none;
+    margin-bottom: 10px;
+    background-color: #3f6fb7d8;
+    color: white;
     padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
 }
+
+.movie-box:hover {
+    background-color: #47475c;
+    box-shadow: 0 0 1rem 0px rgba(255, 254, 254, 0.5);
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    display: block;
+}
+
+
+
+.movie-box button:hover {
+    background-color: #0b911f;
+    padding: 5px 20px;
+    display: block;
+
+}
+
 
 .movie-box:hover img {
     display: none;
@@ -181,17 +204,9 @@ footer {
 
 .movie-box:hover button {
     display: block;
+
 }
 
-
-.Sbutton {
-    display: block;
-    font-weight: bolder;
-    font-size: larger;
-    margin-top: 5px;
-    padding: 5px 20px;
-    background-color: #021326;
-}
 
 /* Divider styling */
 .divider {
@@ -217,7 +232,7 @@ footer {
 
 .modal-content {
     background-color: #3498dbb5;
-    color:white;
+    color: white;
     padding: 20px;
     border-radius: 5px;
     max-width: 20%;
@@ -233,6 +248,7 @@ footer {
         transform: translateY(-100%);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -243,6 +259,7 @@ footer {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -259,7 +276,7 @@ footer {
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgb(240, 141, 99);
+    box-shadow: 0 2px 6px rgb(245, 245, 245);
     display: flex;
     flex-direction: column;
     align-items: center;
