@@ -1,4 +1,6 @@
-// Wait for the DOM content to load before executing the script
+
+// Wait for the DOM to load before running the script
+
 document.addEventListener('DOMContentLoaded', function () {
     // Get the search button element and add a click event listener
     const searchButton = document.getElementById('searchButton');
@@ -14,11 +16,21 @@ document.addEventListener('DOMContentLoaded', function () {
     displayTopFive();
 });
 
+
 // Function to search for movies based on user input
 function searchMovies() {
     const apiKey = '441e8e76a168da10c7a3bb9b4464a698';
     const query = document.getElementById('movieSearch').value;
     const encodedQuery = encodeURIComponent(query); // Encode the query for safe URL usage
+
+// Function to search for movies using TMDB API
+function searchMovies() {
+    const apiKey = '441e8e76a168da10c7a3bb9b4464a698';
+    const query = document.getElementById('movieSearch').value;
+// encodeURIComponent ensures the query is properly formatted for a URL
+    const encodedQuery = encodeURIComponent(query);
+    // reasearch more into the paramters of this api call
+
     const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodedQuery}`;
 
     clearResults(); // Clear any previous search results
@@ -45,6 +57,9 @@ function searchMovies() {
             displayErrorMessage('Failed to fetch movies'); // Display error message for failed API request
         });
 }
+
+
+
 
 // Function to display search results
 function displayResults(movies) {
@@ -85,7 +100,11 @@ function displayResults(movies) {
             displayDefaultImage(movieBox);
         }
 
+
         // Get movie ratings and append them to the movie box
+    // be able to describe where i got this from and what it means(travis)
+        // Fetch movie ratings from OMDB API
+
         getMovieRatings(movie.title, movie.release_date ? movie.release_date.split('-')[0] : null, movieBox);
 
         // Append movie box to results section
@@ -100,6 +119,13 @@ function displayResults(movies) {
     }
 }
 
+
+// Modal
+function showModal(){
+const modal =document.querySelector('#modal');
+    modal.classList.add('is-active');
+
+
 // Function to show modal for successful actions
 function showModal() {
     const modal = document.querySelector('#modal');
@@ -111,13 +137,20 @@ function showModal() {
     }, 1000);
 }
 
+
 // Function to hide modal
 function hideModal() {
+
+// Function to hide modal after 1000ms
+function hideModal(){
     const modal = document.querySelector('#modal');
     modal.classList.remove('is-active'); // Remove CSS class to hide modal
 }
 
+
 // Function to fetch and display poster image for a movie
+
+
 function fetchPosterImage(posterPath, movieBox) {
     const imageUrl = `https://image.tmdb.org/t/p/w200${posterPath}`;
     const imgElement = document.createElement('img');
@@ -127,7 +160,9 @@ function fetchPosterImage(posterPath, movieBox) {
     movieBox.appendChild(imgElement); // Append image element to movie box
 }
 
+
 // Function to display default poster image if no poster is available
+
 function displayDefaultImage(movieBox) {
     const defaultImageUrl = './assets/img/default poster image.jpg';
     const imgElement = document.createElement('img');
@@ -137,7 +172,10 @@ function displayDefaultImage(movieBox) {
     movieBox.appendChild(imgElement); // Append image element to movie box
 }
 
-// Function to fetch and display movie ratings
+
+
+// Function to get movie ratings from OMDB API
+
 function getMovieRatings(title, year, movieBox) {
     const apiKey = '311fbec3';
     const omdbUrl = `https://www.omdbapi.com/?apikey=${apiKey}&t=${title}&y=${year}`;
@@ -178,6 +216,8 @@ function getMovieRatings(title, year, movieBox) {
         });
 }
 
+
+
 // Function to add a movie to the watchlist
 function addToWatchlist(movie) {
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
@@ -191,6 +231,7 @@ function clearResults() {
     const resultsSection = document.getElementById('results');
     resultsSection.innerHTML = ''; // Clear HTML content inside results section
 }
+
 
 // Function to display error message in results section
 function displayErrorMessage(message) {
@@ -320,4 +361,10 @@ function removeFromTopFive(movie) {
     topFive = topFive.filter(m => m.title !== movie.title); // Filter out movie to be removed
     localStorage.setItem('topFive', JSON.stringify(topFive)); // Store updated top five list in local storage
     displayTopFive(); // Update displayed top five list
+
+// Function to display error message
+function displayErrorMessage(message) {
+    const resultsSection = document.getElementById('results');
+    resultsSection.innerHTML = `<p>${message}</p>`;
+
 }

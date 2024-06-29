@@ -1,11 +1,16 @@
+
 // Wait for the DOM content to load before executing these functions
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Display the user's watchlist and top five movies
     displayWatchlist();
     displayTopFive();
 });
 
+
 // Function to display movies in the watchlist
+
 function displayWatchlist() {
     const genreSections = document.getElementById('genre-sections');
     const modal = document.querySelector('#modal');
@@ -15,7 +20,7 @@ function displayWatchlist() {
         console.error('Element with id "genre-sections" not found.');
         return;
     }
-
+    // Retrieve the watchlist from local storage or initialize an empty array if not found
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
     console.log('Loaded watchlist:', watchlist); // Debugging line
@@ -28,7 +33,11 @@ function displayWatchlist() {
         return;
     }
 
-    // Loop through each movie in the watchlist and display it
+
+    
+
+        // Iterate over the watchlist and create elements for each movie
+
     watchlist.forEach(movie => {
         const movieBox = document.createElement('div');
         movieBox.classList.add('movie-box'); // Add CSS class for styling
@@ -40,10 +49,16 @@ function displayWatchlist() {
         const movieOverview = document.createElement('p');
         movieOverview.textContent = movie.overview;
 
+
         movieBox.appendChild(movieTitle); // Append title to movie box
         movieBox.appendChild(movieOverview); // Append overview to movie box
 
         // Fetch and display poster image if available
+
+        movieBox.appendChild(movieTitle);
+        movieBox.appendChild(movieOverview);
+        // If the movie has a poster path, create an image element for it
+
         if (movie.poster_path) {
             const imageUrl = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
             const imgElement = document.createElement('img');
@@ -53,7 +68,11 @@ function displayWatchlist() {
             movieBox.appendChild(imgElement); // Append image element to movie box
         }
 
-        // Create button to add movie to top five list
+
+       
+
+        // Add a button to add the movie to the Top 5 list
+
         const addToTopFiveButton = document.createElement('button');
         addToTopFiveButton.classList.add('button', 'add-to-top-five');
         addToTopFiveButton.textContent = 'Add to Top 5';
@@ -62,7 +81,10 @@ function displayWatchlist() {
             showModal('Added to Top 5'); // Show modal confirmation
         });
 
-        // Create button to mark movie as watched and remove from watchlist
+
+
+        // Add a button to mark the movie as watched and remove it from the watchlist
+
         const watchedButton = document.createElement('button');
         watchedButton.classList.add('button', 'watched');
         watchedButton.textContent = 'Watched';
@@ -83,7 +105,10 @@ function displayWatchlist() {
     });
 }
 
-// Function to show modal with a message
+
+
+// Function to show a modal with a message
+
 function showModal(message) {
     const modal = document.querySelector('#modal');
     const modalContent = document.querySelector('.modal-content');
@@ -96,13 +121,18 @@ function showModal(message) {
     }, 1000);
 }
 
-// Function to hide modal
+
+
+// Function to hide the modal
+
 function hideModal() {
     const modal = document.querySelector('#modal');
     modal.classList.remove('is-active'); // Remove CSS class to hide modal
 }
 
+
 // Function to display top five movies
+
 function displayTopFive() {
     const topFiveSection = document.getElementById('top-5-section');
 
@@ -123,7 +153,9 @@ function displayTopFive() {
         return;
     }
 
-    // Loop through each movie in the top five list and display it
+
+    // Iterate over the top 5 list and create elements for each movie
+
     topFive.forEach(movie => {
         const movieBox = document.createElement('div');
         movieBox.classList.add('movie-box'); // Add CSS class for styling
@@ -139,6 +171,11 @@ function displayTopFive() {
         movieBox.appendChild(movieOverview); // Append overview to movie box
 
         // Fetch and display poster image if available
+
+        movieBox.appendChild(movieTitle);
+        movieBox.appendChild(movieOverview);
+        // If the movie has a poster path, create an image element for it
+
         if (movie.poster_path) {
             const imageUrl = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
             const imgElement = document.createElement('img');
@@ -148,7 +185,11 @@ function displayTopFive() {
             movieBox.appendChild(imgElement); // Append image element to movie box
         }
 
-        // Create button to remove movie from top five list
+
+   
+
+        // Add a button to remove the movie from the Top 5 list
+
         const removeFromTopFiveButton = document.createElement('button');
         removeFromTopFiveButton.classList.add('button', 'remove-from-top-five');
         removeFromTopFiveButton.textContent = 'Remove';
@@ -162,13 +203,20 @@ function displayTopFive() {
     });
 }
 
-// Function to add a movie to the watchlist
+
+
+
+// function to add a movie to the watchlist
+
 function addToWatchlist(movie) {
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
     watchlist.push(movie);
     localStorage.setItem('watchlist', JSON.stringify(watchlist)); // Store updated watchlist in local storage
     displayWatchlist(); // Update displayed watchlist
 }
+
+
+
 
 // Function to remove a movie from the watchlist
 function removeFromWatchlist(movie) {
@@ -178,7 +226,10 @@ function removeFromWatchlist(movie) {
     displayWatchlist(); // Update displayed watchlist
 }
 
+
 // Function to add a movie to the top five list
+
+
 function addToTopFive(movie) {
     let topFive = JSON.parse(localStorage.getItem('topFive')) || [];
     if (topFive.length < 5) {
@@ -190,7 +241,10 @@ function addToTopFive(movie) {
     }
 }
 
-// Function to remove a movie from the top five list
+
+
+// Function to remove a movie from the Top 5 list
+
 function removeFromTopFive(movie) {
     let topFive = JSON.parse(localStorage.getItem('topFive')) || [];
     topFive = topFive.filter(m => m.title !== movie.title); // Filter out movie to be removed
