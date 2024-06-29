@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
 </head>
+
 <body>
+    <!-- Header Section -->
     <header class="hero is-dark">
         <div class="hero-body">
             <div class="container">
@@ -23,6 +26,7 @@
                             <div class="navbar-menu">
                                 <div class="navbar-start">
                                     <a class="navbar-item is-1" href="watchlist.html">Watchlist</a>
+                                    <!-- Link to the watchlist page -->
                                 </div>
                             </div>
                         </nav>
@@ -31,39 +35,52 @@
             </div>
         </div>
     </header>
+
+    <!-- Main Content Section -->
     <main class="section">
+        <!-- Modal Section -->
         <div class="modal" id="modal">
-            <div class="modal-background"></div>
+            <div></div>
             <div class="modal-content">
-             Added to watchlist
+                Added to watchlist
             </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-          </div>
+        </div>
+
         <div class="container">
+            <!-- Home Section -->
             <section id="homeSection" class="section">
+                <!-- Search Section -->
                 <section class="search-section">
                     <div class="field has-addons">
                         <div class="control is-expanded">
-                            <input class="input is-dark" type="text" id="movieSearch" placeholder="Search for Movie titles">
+                            <input class="input is-dark" type="text" id="movieSearch"
+                                placeholder="Search for Movie titles">
                         </div>
                         <div class="control">
                             <button class="button is-info" id="searchButton">Search</button>
                         </div>
                     </div>
                 </section>
+
+                <!-- Results Section -->
                 <section id="results" class="section">
                     <!-- Movie boxes will be populated here dynamically -->
                 </section>
             </section>
         </div>
     </main>
-    <!-- bula class color for dark footer -->
+
+    <!-- Footer Section -->
     <footer class="footer is-small has-background-dark" id="movieTitle">
         <div class="content has-text-centered">
-            <!-- added class for white popcorn picks color -->
-            <p class="has-text-white"><strong  class="has-text-white">PopcornPicks</strong> by <a href="https://github.com/Robert-Ulloa/PopcornPicks">JRT</a>.</p>
+            <!-- PopcornPicks Footer -->
+            <p class="has-text-white"><strong class="has-text-white">PopcornPicks</strong> by <a
+                    href="https://github.com/Robert-Ulloa/PopcornPicks">JRT</a>.</p>
         </div>
     </footer>
+
+    <!-- JavaScript -->
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

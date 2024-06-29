@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
     <script defer src="./assets/js/watchlist.js"></script>
 </head>
+
 <body>
+    <!-- Header Section -->
     <header class="hero is-dark">
         <div class="hero-body">
             <div class="container">
@@ -32,35 +35,49 @@
             </div>
         </div>
     </header>
+
+    <!-- Main Content Section -->
     <main class="section">
+        <!-- Modal Section -->
         <div class="modal" id="modal">
             <div></div>
             <div class="modal-content">
-             Added to Top 5
+                Added to Top 5
             </div>
-            <!-- <button class="modal-close is-large" aria-label="close"></button> -->
-          </div>
+        </div>
+
+        <!-- Main Content Container -->
         <div class="container columns">
+            <!-- Watchlist Section -->
             <section class="column is-half watchlist">
                 <h2 class="section-title subtitle">Watchlist</h2>
                 <div id="genre-sections" class="columns is-multiline">
                     <!-- Genre sections will be dynamically added here by JavaScript -->
                 </div>
             </section>
+
+            <!-- Divider -->
             <div class="divider"></div>
+
+            <!-- Top 5 Section -->
             <section class="column is-half top5">
                 <h2 class="section-title subtitle">Top 5</h2>
                 <div id="top-5-section" class="columns is-multiline">
+                    <!-- Top 5 movies will be dynamically added here by JavaScript -->
                 </div>
             </section>
         </div>
     </main>
+
+    <!-- Footer Section -->
     <footer class="footer has-background-dark">
         <div class="content has-text-centered">
             <p>
-                <strong class="has-text-white">PopcornPicks</strong> by <a href="https://github.com/Robert-Ulloa/PopcornPicks">JRT</a>.
+                <strong class="has-text-white">PopcornPicks</strong> by <a
+                    href="https://github.com/Robert-Ulloa/PopcornPicks">JRT</a>.
             </p>
         </div>
     </footer>
 </body>
+
 </html>
