@@ -33,11 +33,7 @@ function displayWatchlist() {
         return;
     }
 
-
-    
-
-        // Iterate over the watchlist and create elements for each movie
-
+    // Iterate over the watchlist and create elements for each movie
     watchlist.forEach(movie => {
         const movieBox = document.createElement('div');
         movieBox.classList.add('movie-box'); // Add CSS class for styling
@@ -69,7 +65,7 @@ function displayWatchlist() {
         }
 
 
-       
+
 
         // Add a button to add the movie to the Top 5 list
 
@@ -186,7 +182,7 @@ function displayTopFive() {
         }
 
 
-   
+
 
         // Add a button to remove the movie from the Top 5 list
 

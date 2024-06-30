@@ -22,12 +22,12 @@ function searchMovies() {
     const apiKey = '441e8e76a168da10c7a3bb9b4464a698';
     const query = document.getElementById('movieSearch').value;
     const encodedQuery = encodeURIComponent(query); // Encode the query for safe URL usage
-
+}
 // Function to search for movies using TMDB API
 function searchMovies() {
     const apiKey = '441e8e76a168da10c7a3bb9b4464a698';
     const query = document.getElementById('movieSearch').value;
-// encodeURIComponent ensures the query is properly formatted for a URL
+    // encodeURIComponent ensures the query is properly formatted for a URL
     const encodedQuery = encodeURIComponent(query);
     // reasearch more into the paramters of this api call
 
@@ -102,7 +102,7 @@ function displayResults(movies) {
 
 
         // Get movie ratings and append them to the movie box
-    // be able to describe where i got this from and what it means(travis)
+        // be able to describe where i got this from and what it means(travis)
         // Fetch movie ratings from OMDB API
 
         getMovieRatings(movie.title, movie.release_date ? movie.release_date.split('-')[0] : null, movieBox);
@@ -120,10 +120,6 @@ function displayResults(movies) {
 }
 
 
-// Modal
-function showModal(){
-const modal =document.querySelector('#modal');
-    modal.classList.add('is-active');
 
 
 // Function to show modal for successful actions
@@ -138,11 +134,8 @@ function showModal() {
 }
 
 
-// Function to hide modal
-function hideModal() {
-
 // Function to hide modal after 1000ms
-function hideModal(){
+function hideModal() {
     const modal = document.querySelector('#modal');
     modal.classList.remove('is-active'); // Remove CSS class to hide modal
 }
@@ -361,10 +354,10 @@ function removeFromTopFive(movie) {
     topFive = topFive.filter(m => m.title !== movie.title); // Filter out movie to be removed
     localStorage.setItem('topFive', JSON.stringify(topFive)); // Store updated top five list in local storage
     displayTopFive(); // Update displayed top five list
-
+}
 // Function to display error message
 function displayErrorMessage(message) {
     const resultsSection = document.getElementById('results');
     resultsSection.innerHTML = `<p>${message}</p>`;
 
-}
+};
