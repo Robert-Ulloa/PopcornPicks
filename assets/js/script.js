@@ -129,7 +129,7 @@ function fetchPosterImage(posterPath, movieBox) {
 
 // Function to display default poster image if no poster is available
 function displayDefaultImage(movieBox) {
-    const defaultImageUrl = './assets/img/default-poster-image.jpg';
+    const defaultImageUrl ='./assets/img/default poster image.jpg';
     const imgElement = document.createElement('img');
     imgElement.src = defaultImageUrl;
     imgElement.alt = 'Default Movie Poster';
