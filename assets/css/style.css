@@ -275,6 +275,38 @@ footer {
     background-color: #555;
 }
 
+@media screen and (max-width:600px) {
+
+    #popcorn {
+        display:none;
+        align-items: center;
+    }
+    .title {
+       margin:auto;
+       display: 10px 0;
+    }
+
+    .navbar-item {
+      width: 50%;
+     margin:auto;
+     text-align: center;
+    }
+    
+    .modal-content {
+        background-color: #3498dbb5;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+     .movie-box {
+       max-width: 500px; /* Ensure full width on small screens */
+    }
+}
+
 
 @keyframes moveInTop {
     0% {
@@ -297,3 +329,11 @@ footer {
         opacity: 1;
     }
 }
+
+ /* @use "bulma/sass/utilities/mixins";
+
+@include mixins.mobile {
+  navbar-item {
+        display: block;
+    }
+}  */
