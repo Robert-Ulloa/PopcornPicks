@@ -242,6 +242,33 @@ footer {
     font-weight: bolder;
 }
 
+@media screen and (max-width:650px) {
+
+    #popcorn {
+        display:none;
+        align-items: center;
+    }
+    .title {
+       margin:auto;
+       display: 10px 0;
+    }
+
+    .navbar-item {
+      width: 50%;
+     margin:auto;
+     text-align: center;
+
+    }
+    
+    .modal-content {
+        background-color: #3498dbb5;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 100%;
+    }
+    
+}
 
 @keyframes moveInTop {
     0% {
